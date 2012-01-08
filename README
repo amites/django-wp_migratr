@@ -1,0 +1,24 @@
+This is a simple application used to pull Wordpress Articles via XMLRPC
+into a Django template.
+
+To get started download a copy and place within your PYTHON_PATH.
+
+Install dependency:
+    pip install -e git+https://github.com/maxcutler/python-wordpress-xmlrpc
+
+Add the following to settings.py
+    WORDPRESS_MIGRATR= {
+        'server' : 'http://WORDPRESS_DOMAIN/xmlrpc.php',
+        'user' : 'WORDPRESS_USER',
+        'pass' : 'WORDPRESS_PASSWORD',
+    }
+
+
+Usage:
+    {% load wp_article %}
+
+    {% wpArticle POST_ID %}
+
+
+Includes a hook to auto filter [caption] blocks. Lots of improvement possible,
+feel free to fork and improve.
