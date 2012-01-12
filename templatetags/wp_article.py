@@ -1,4 +1,5 @@
 from django import template
+from django.utils.html import linebreaks
 from wordpress_xmlrpc.methods.posts import GetPost
 
 from wp_migratr.articles import wpClient, wpCaption
@@ -14,6 +15,6 @@ def wpArticle(format_string):
     '''
     wp = wpClient()
     post = wp.call(GetPost(format_string))
-    return wpCaption(post.description).replace('\n', '<br>')
+    return linebreaks(wpCaption(post.description))
 
 

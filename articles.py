@@ -25,7 +25,7 @@ def wpCaption(post):
             if imatch.group(1) == 'id':
                 meta += 'id="%s" ' % imatch.group(2)
             if imatch.group(1) == 'align':
-                meta += 'class="wp-content %s" ' % imatch.group(2)
+                meta += 'class="wp-caption %s" ' % imatch.group(2)
             if imatch.group(1) == 'width':
                 meta += 'style="width: %spx;" ' % str(int(imatch.group(2)) + 10)
             if imatch.group(1) == 'caption':
